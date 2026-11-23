@@ -1,0 +1,29 @@
+# ---- Dependencies ----
+node_modules/
+
+# ---- Build output ----
+dist/
+build/
+*.tsbuildinfo
+
+# ---- Secrets and local config (the *.env.example files stay committed) ----
+.env
+.env.*
+!.env.example
+*.pem
+
+# ---- Logs and test output ----
+*.log
+npm-debug.log*
+coverage/
+
+# ---- OS and editor files ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# ---- Local reference files (not code) ----
+Opportunity Fields.xlsx
+Opportunity Information.docx
