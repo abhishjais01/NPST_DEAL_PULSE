@@ -13,12 +13,11 @@ NestJS service for DealPlus opportunities: the record, stages, products, revenue
 ```bash
 npm run opp:migrate          # create / update tables
 npm run start:opportunities  # start with watch
-npm test                     # unit + HTTP tests (no database needed)
+npm run test:opportunities   # unit + HTTP tests (no database needed)
 ```
 
-If `nest` / `jest` aren't found on Windows, `node_modules` was installed on another OS: run `npm install` again.
-In the meantime, `node node_modules/@nestjs/cli/bin/nest.js start opportunity-service` and
-`node node_modules/jest/bin/jest.js` work anywhere.
+Test config: `jest.config.js` + `jest.setup.js` in this folder. The repo-wide `npm test` runs another service's tests.
+If `nest` / `jest` aren't found, run `npm install` in `backend/` on your own machine.
 
 ## Configuration
 

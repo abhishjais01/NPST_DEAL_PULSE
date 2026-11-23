@@ -1,28 +1,36 @@
 # ---- Dependencies ----
 node_modules/
+**/node_modules/
 
 # ---- Build output ----
 dist/
 build/
+coverage/
 *.tsbuildinfo
 
-# ---- Secrets and local config (the *.env.example files stay committed) ----
+# ---- Environment variables and secrets (the *.env.example files stay committed) ----
 .env
 .env.*
 !.env.example
+ca.pem
 *.pem
 
-# ---- Logs and test output ----
+# ---- Logs ----
 *.log
+logs/
 npm-debug.log*
-coverage/
 
-# ---- OS and editor files ----
+# ---- OS files ----
 .DS_Store
 Thumbs.db
+
+# ---- IDE ----
+.vscode/
 .idea/
-.vscode/*
-!.vscode/extensions.json
+
+# ---- Temporary files ----
+tmp/
+temp/
 
 # ---- Local reference files (not code) ----
 Opportunity Fields.xlsx

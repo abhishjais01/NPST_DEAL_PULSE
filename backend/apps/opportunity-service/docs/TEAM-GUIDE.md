@@ -12,7 +12,7 @@ Owner: `<your name>` · Code: `backend/apps/opportunity-service` · Full contrac
 | Health | `GET /api/v1/health` → `{ status, database }` |
 | Start | `npm run start:opportunities` (from `backend/`) |
 | Migrate | `npm run opp:migrate` |
-| Tests | `npm test` |
+| Tests | `npm run test:opportunities` |
 | Ids accepted in URLs | numeric `id` or public id `OPP-YYYY-NNNNN` |
 
 ## Setup (5 minutes)

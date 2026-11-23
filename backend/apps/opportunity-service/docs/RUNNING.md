@@ -14,7 +14,7 @@ cd backend
 npm install
 ```
 
-> **Windows note:** if `npm test` says *"'jest' is not recognized"*, `node_modules` was installed on another OS.
+> **Windows note:** if a command says *"'jest' is not recognized"*, `node_modules` was installed on another OS.
 > Delete `backend/node_modules` and run `npm install` again on your machine.
 
 ### Database connection: `.env`
@@ -35,9 +35,10 @@ DB_SSL_MODE=REQUIRED
 
 **Option B: local MySQL in Docker**
 ```bash
-docker compose up -d mysql            # from the repo root
-docker exec -it dealplus-mysql mysql -uroot -plocal_root_change_me \
-  -e "CREATE DATABASE IF NOT EXISTS opportunity_db; GRANT ALL ON opportunity_db.* TO 'dealplus'@'%';"
+# The shared docker-compose.yml has no MySQL (the team uses Aiven), so start one directly:
+docker run -d --name opp-mysql -p 3306:3306 \
+  -e MYSQL_ROOT_PASSWORD=local_root_change_me -e MYSQL_DATABASE=opportunity_db \
+  -e MYSQL_USER=dealplus -e MYSQL_PASSWORD=local_change_me mysql:8.4
 ```
 ```env
 DB_HOST=127.0.0.1
@@ -100,9 +101,8 @@ Log in, open **Opportunities**, and create a deal: it's saved through this servi
 
 ## 6. Tests
 ```bash
-npm test                                   # all opportunity-service tests (no DB needed)
-node node_modules/jest/bin/jest.js         # same, if the jest command isn't found
-node node_modules/jest/bin/jest.js stages  # only files whose path matches "stages"
+npm run test:opportunities                 # all opportunity-service tests (no DB needed)
+npm run test:opportunities -- stages       # only files whose path matches "stages"
 node node_modules/typescript/bin/tsc --noEmit -p apps/opportunity-service/tsconfig.app.json   # type-check
 ```
 
