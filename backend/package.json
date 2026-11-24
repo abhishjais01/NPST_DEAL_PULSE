@@ -29,7 +29,11 @@
     "migration:lead:generate": "typeorm-ts-node-commonjs migration:generate apps/lead-service/src/database/migrations/InitialLeadSchema -d apps/lead-service/src/database/data-source.ts",
     "migration:lead:run": "typeorm-ts-node-commonjs migration:run -d apps/lead-service/src/database/data-source.ts",
     "migration:lead:revert": "typeorm-ts-node-commonjs migration:revert -d apps/lead-service/src/database/data-source.ts",
-    "migration:lead:show": "typeorm-ts-node-commonjs migration:show -d apps/lead-service/src/database/data-source.ts"
+    "migration:lead:show": "typeorm-ts-node-commonjs migration:show -d apps/lead-service/src/database/data-source.ts",
+    "test:opportunities": "jest --config apps/opportunity-service/jest.config.js",
+    "opp:migrate": "node node_modules/typeorm/cli-ts-node-commonjs.js migration:run -d apps/opportunity-service/src/database/data-source.ts",
+    "opp:migrate:revert": "node node_modules/typeorm/cli-ts-node-commonjs.js migration:revert -d apps/opportunity-service/src/database/data-source.ts",
+    "opp:migrate:show": "node node_modules/typeorm/cli-ts-node-commonjs.js migration:show -d apps/opportunity-service/src/database/data-source.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1172.0",
