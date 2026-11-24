@@ -8,7 +8,11 @@ NestJS service for DealPlus assignments (PRD US-15 and Step 5):
 
 Port **3007**, prefix `/api/v1`, Swagger at **`/api/docs`**, database **`assignment_db`**.
 
-> Status: Steps 1–4 done (foundation, integrations, technical assignments, handoffs). Full API docs: Swagger `/api/docs`.
+- **API contract:** [API.md](./API.md)
+- **Architecture** (+ plain-language overview): [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md)
+- **How to run** (with a curl walkthrough): [docs/RUNNING.md](./docs/RUNNING.md) · **For teammates:** [docs/TEAM-GUIDE.md](./docs/TEAM-GUIDE.md)
+
+> Status: complete (technical assignments + handoffs). Real Auth / RFP / Notification plug in by env URL when those services exist.
 
 ## Endpoints (all under `/api/v1`, send `x-user-id`)
 
