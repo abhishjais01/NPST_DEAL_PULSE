@@ -8,7 +8,16 @@ NestJS service for DealPlus assignments (PRD US-15 and Step 5):
 
 Port **3007**, prefix `/api/v1`, Swagger at **`/api/docs`**, database **`assignment_db`**.
 
-> Status: foundation + integration clients done (Steps 1–2). Business endpoints come in Steps 3–4.
+> Status: Steps 1–4 done (foundation, integrations, technical assignments, handoffs). Full API docs: Swagger `/api/docs`.
+
+## Endpoints (all under `/api/v1`, send `x-user-id`)
+
+| Area | Endpoints |
+|---|---|
+| Product → Tech Lead master | `GET/POST /product-verticals`, `GET/PATCH /product-verticals/:id`, `GET …/:id/history` |
+| Technical assignments | `GET /assignments` (filters), `GET /assignments/opportunity/:opp`, `POST /assignments/opportunity/:opp/requirements`, `POST …/auto-assign`, `POST /assignments/opportunity/:opp` (manual), `GET /assignments/:id`, `GET …/:id/history`, `POST /assignments/:id/approve \| change \| return` (Solution Manager) |
+| Review queue | `GET /requirements/review-queue`, `PATCH /requirements/:id` (set product), `GET /requirements/:id/history` |
+| Pre-Sales handoffs | `GET/POST /handoffs`, `GET/PATCH /handoffs/:id`, `GET …/:id/history`, `POST /handoffs/:id/accept \| return` (Solution Manager), `POST …/resubmit \| complete \| cancel` |
 
 ## Run (from `backend/`)
 
